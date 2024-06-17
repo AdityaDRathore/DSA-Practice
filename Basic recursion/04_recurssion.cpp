@@ -25,20 +25,35 @@
 
 //-----------------------------------Is a Palindrome--------------------------------------
 
-#include<iostream>
-using namespace std; 
+// #include<iostream>
+// using namespace std; 
 
-bool isPalindrome(int i, int s[], int n) {
+// bool isPalindrome(int i, int s[], int n) {
 
-    if(i >= n/2) return true; 
-    if(s[i] != s[n-i-1]) return false; 
+//     if(i >= n/2) return true; 
+//     if(s[i] != s[n-i-1]) return false; 
 
-    isPalindrome(i+1, s, n); 
-} 
+//     isPalindrome(i+1, s, n); 
+// } 
 
+// int main() {
+
+//     int s[5] = {'M','A','D','S','M'}; 
+//     cout << isPalindrome(0, s, 5) << endl; 
+//     return 0; 
+// }
+
+//-----------------------------------------------------Is string a palindrome or not----------------------------------------------------------
+
+#include <algorithm>
+#include <cctype>
+#include <string>
+#include <iostream>
+
+using namespace std;
 int main() {
-
-    int s[5] = {'M','A','D','S','M'}; 
-    cout << isPalindrome(0, s, 5) << endl; 
-    return 0; 
+    string str = "HeL@O woRLD";
+    transform(str.begin(), str.end(), str.begin(), ::tolower);
+    cout << str << std::endl; // Output: hello world
+    return 0;
 }
