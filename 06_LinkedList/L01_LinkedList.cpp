@@ -5,12 +5,12 @@ using namespace std;
 
 struct Node {
     public:
-    int date; 
+    int data; 
     Node* next;
 
     public:
-    Node(int date1) {
-        date = date1;
+    Node(int data1) {
+        data = data1;
         next = nullptr;  
     } 
 };
@@ -26,8 +26,30 @@ Node* convertArrtoLL(vector<int>&arr) {
     return head; 
 }
 
+int lengthOfLL(Node* head) {
+    int cnt = 0;
+    Node*temp = head; 
+    while(temp) {
+        cnt++; 
+        temp = temp->next; 
+    }
+    return cnt; 
+}
+
+int checkLL(Node* head, int val) {
+    Node*temp = head; 
+    while(temp) {
+        if(temp->data == val) {
+            return 1; 
+        }
+        temp = temp->next; 
+    }
+    return 0; 
+}
+
 int main() {
     vector<int> arr = {2,4,7,8}; 
     Node* head = convertArrtoLL(arr); 
-    cout << head->date << endl; 
+    cout << lengthOfLL(head) << endl; 
+    cout << checkLL(head, 2);    
 }
